@@ -1,0 +1,24 @@
+/* --------------------------------------------------------------
+1. PLUGIN SETTINGS PAGE
+-------------------------------------------------------------- */
+/* Metaboxes */
+.ctcb-metabox { overflow:hidden; margin:20px 10px; }
+.ctcb-metabox .name { float:left; width:150px; padding:5px 0px; font-family:Century Gothic, Verdana, Arial; font-weight:bold; }
+.ctcb-metabox .field { margin-left:180px; max-width:340px; min-width:200px; }
+.ctcb-metabox .desc { float:left; margin:6px 0px 0px 180px; clear:both; color:#666; font-size:11px; font-weight:normal; }
+.ctcb-metabox-wide .field { max-width:none; }
+/* Aside metaboxes */
+#side-sortables .ctcb-metabox .name { float:none; width:auto; }
+#side-sortables .ctcb-metabox .desc { float:none; max-width:100%; min-width:0; margin-left:0; }
+#side-sortables .ctcb-metabox .field { margin-left:0; }
+
+.ctcb-metabox input[type=text] { width:95%; }
+.ctcb-metabox input[type=upload] { width:70%; }
+.ctcb-metabox input.color { width:70px; }
+.ctcb-metabox textarea { font-family:monospace; width:95%; height:100px; max-height:350px; min-height:100px; resize:vertical; }
+.ctcb-metabox select { width:95%; }
+.ctcb-metabox option:disabled { background:#ddd; font-weight:bold; padding:5px 0; }
+
+/* Columns in posts table */
+.column-ctcb-location,
+.column-ctcb-filters { width:150px; }
