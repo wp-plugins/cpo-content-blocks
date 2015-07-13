@@ -7,7 +7,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows you to create reusable pieces of content that you can place anywhere in your site. Insert them into your posts, on a sidebar, or place them directly onto the layout thanks to the different areas available.
+Allows you to create reusable pieces of content that you can place anywhere in your site.
 
 == Description ==
 
