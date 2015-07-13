@@ -15,7 +15,7 @@ if(!function_exists('ctcb_setup')){
 		$textdomain = 'ctcb';
 		$locale = apply_filters('plugin_locale', get_locale(), $textdomain);
 		if(!load_textdomain($textdomain, trailingslashit(WP_LANG_DIR).$textdomain.'/'.$textdomain.'-'.$locale.'.mo')){
-			load_plugin_textdomain($textdomain, FALSE, basename(dirname(__FILE__)).'/languages/');
+			load_plugin_textdomain($textdomain, FALSE, basename(dirname($_SERVER["SCRIPT_FILENAME"])).'/languages/');
 		}
 	}
 }

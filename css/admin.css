@@ -13,6 +13,7 @@
 #side-sortables .ctcb-metabox .field { margin-left:0; }
 
 .ctcb-metabox input[type=text] { width:95%; }
+.ctcb-metabox label { display:block; margin:0 0 5px; }
 .ctcb-metabox input[type=upload] { width:70%; }
 .ctcb-metabox input.color { width:70px; }
 .ctcb-metabox textarea { font-family:monospace; width:95%; height:100px; max-height:350px; min-height:100px; resize:vertical; }

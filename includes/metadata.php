@@ -7,21 +7,21 @@ function ctcb_metadata_block_settings(){
 	$metadata['block_location'] = array(
 	'name' => 'block_location',
 	'label' => __('Block Location', 'ctcb'),
-	'desc' => __('Specify a location for this content block. content blocks can also be inserted through the [cpo_content_block] shortcode.', 'ctcb'),
+	'desc' => __('Select where your content block should be located within your website layout.', 'ctcb'),
 	'type' => 'select',
 	'option' => ctcb_metadata_locations());
 	
-	$metadata['block_filter'] = array(
-	'name' => 'block_filter',
-	'label' => __('Block Display', 'ctcb'),
-	'desc' => __('Specify on which pages this block should be visible.', 'ctcb'),
-	'type' => 'select',
-	'option' => ctcb_metadata_filters());
+	$metadata['block_pages'] = array(
+	'name' => 'block_pages',
+	'label' => __('Show In Pages', 'ctcb'),
+	'desc' => __('Select in which pages this block should be displayed.', 'ctcb'),
+	'type' => 'checkbox',
+	'option' => ctcb_metadata_pages());
 	
 	$metadata['block_priority'] = array(
 	'name' => 'block_priority',
 	'label' => __('Block Priority', 'ctcb'),
-	'desc' => __('Specifies the priority in which this block should appear, in case of multiple blocks using the same location. Lower numbers mean higher priority.', 'ctcb'),
+	'desc' => __('Specifies the priority in which this block should appear, in case of multiple blocks using the same location. Blocks with a lower number will appear first.', 'ctcb'),
 	'type' => 'text');
 	
 	return apply_filters('ctcb_metadata_block_settings', $metadata);
@@ -32,12 +32,6 @@ function ctcb_metadata_block_appearance(){
 
 	$metadata = array();
 	
-	/*$metadata['block_full'] = array(
-	'name' => 'block_full',
-	'label' => __('Full Width', 'ctcb'),
-	'desc' => __('Removes all containers in this block. If enabled, the content will fill all the available width.', 'ctcb'),
-	'type' => 'yesno');*/
-
 	$metadata['block_padding'] = array(
 	'name' => 'block_padding',
 	'label' => __('Padding', 'ctcb'),
@@ -63,16 +57,11 @@ function ctcb_metadata_block_appearance(){
 	'type' => 'select',
 	'option' => ctcb_metadata_color());
 	
-	$metadata['block_css'] = array(
-	'name' => 'block_css',
-	'label' => __('Custom CSS Styling', 'ctcb'),
-	'desc' => __('Allows you to customize the CSS styling of this block.', 'ctcb'),
-	'type' => 'textarea');
-	
 	return apply_filters('ctcb_metadata_block_appearance', $metadata);
 }
 
 
+//Position within the site
 function ctcb_metadata_locations($key = null){
 	$metadata = array(
 	'0' => __('(None)', 'ctcb'),
@@ -99,28 +88,43 @@ function ctcb_metadata_locations($key = null){
 }
 
 
-
-function ctcb_metadata_filters($key = null){
+//Location through out the site
+function ctcb_metadata_pages($key = null){
 	$metadata = array(
 	'always' => __('Show Always', 'ctcb'),
-	'front_page' => __('Front Page', 'ctcb'),
+	'home' => __('Home Page', 'ctcb'),
 	'post' => __('Posts', 'ctcb'),
 	'page' => __('Pages', 'ctcb'),
 	'404' => __('404 Pages', 'ctcb'),
 	'search' => __('Search Pages', 'ctcb'));
 	
 	//Add public post types
-	/*$post_types = get_post_types(array('public' => true), 'objects');
+	//$metadata['custom_post_types'] = array('name' => __('Custom Post Types', 'ctcb'), 'type' => 'separator');
+	$post_types = get_post_types(array('public' => true), 'objects');
 	foreach($post_types as $current_type => $current_data)
-		$metadata[$current_type] = $current_data->labels->name;*/
+		if(!isset($metadata[$current_type])) 
+			$metadata[$current_type] = $current_data->labels->name;
 	
 	//Add public taxonomies
-	/*$taxonomies = get_taxonomies(array('public' => true), 'objects');
+	$taxonomies = get_taxonomies(array('public' => true), 'objects');
 	foreach($taxonomies as $taxonomy => $current_data)
-		$metadata[$taxonomy] = $current_data->labels->name;*/
+		if(!isset($metadata[$taxonomy])) 
+			$metadata[$taxonomy] = $current_data->labels->name;
 	
 	return $key != null && isset($metadata[$key]) ? $metadata[$key] : $metadata;
 }
+
+
+//Conditional filters
+function ctcb_metadata_filters($key = null){
+	$metadata = array(
+	'logged_in' => __('Logged In Users Only', 'ctcb'),
+	'logged_out' => __('Logged Out Users Only', 'ctcb'),
+	);
+	
+	return $key != null && isset($metadata[$key]) ? $metadata[$key] : $metadata;
+}
+
 
 function ctcb_metadata_color($key = null){
 	$metadata = array(

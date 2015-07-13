@@ -68,14 +68,14 @@ function ctcb_load_blocks(){
 	if($blocks->posts){
 		foreach($blocks->posts as $post){
 			$block_location = get_post_meta($post->ID, 'block_location', true);
-			$block_filter = get_post_meta($post->ID, 'block_filter', true);
+			$block_filter = get_post_meta($post->ID, 'block_pages', true);
 			$block_priority = get_post_meta($post->ID, 'block_priority', true);
 			if($block_priority == '') $block_priority = 10;
 			$block_priority = absint($block_priority);
 				
 			//If block location is defined, add it to the queue
 			if($block_location != ''){
-				if(ctcb_block_filter($block_filter)){
+				if(ctcb_block_page_filter($block_filter)){
 					//Add block to action using anonymous function
 					$block_data = array(
 					'id' => $post->ID,
@@ -96,16 +96,26 @@ function ctcb_load_blocks(){
 
 
 //Determine whether to show the block on current page
-function ctcb_block_filter($filter){
+function ctcb_block_page_filter($pages){
 	//If show always, return
-	if($filter == 'always' || $filter == '') return true;
-	switch($filter){
-		case 'front_page': if(is_front_page()) return true; break;
-		case 'post': if(is_single()) return true; break;
-		case 'page': if(is_page()) return true; break;
-		case '404': if(is_404()) return true; break;
-		case 'search': if(is_search()) return true; break;
-		default: return true; break;
+	if(!is_array($pages)) return false;
+	
+	foreach($pages as $current_filter => $current_data){
+		//Standard filters
+		switch($current_filter){
+			case 'always': return true; break;
+			case 'home': if(is_front_page()) return true; break;
+			case 'post': if(is_single()) return true; break;
+			case 'page': if(is_page()) return true; break;
+			case '404': if(is_404()) return true; break;
+			case 'search': if(is_search()) return true; break;
+		}
+		
+		//Custom Post Types
+		if(is_singular($current_filter)) return true;
+		
+		//Taxonomies
+		if(is_tax($current_filter)) return true;
 	}
 	
 	return false;
@@ -134,14 +144,14 @@ function ctcb_block($post_id){
 	$post = get_post($post_id);
 	if($post){
 		$block_location = get_post_meta($post->ID, 'block_location', true);
-		$block_filter = get_post_meta($post->ID, 'block_filter', true);
+		$block_filter = get_post_meta($post->ID, 'block_pages', true);
 		$block_priority = get_post_meta($post->ID, 'block_priority', true);
 		if($block_priority == '') $block_priority = 10;
 		$block_priority = absint($block_priority);
 			
 		//If block location is defined, add it to the queue
 		if($block_location != ''){
-			if(ctcb_block_filter($block_filter)){
+			if(ctcb_block_page_filter($block_filter)){
 				//Add block to action using anonymous function
 				$block_data = array(
 				'id' => $post->ID,

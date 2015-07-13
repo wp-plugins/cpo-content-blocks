@@ -19,14 +19,6 @@ if(!function_exists('ctcb_form_textarea')){
 	}
 }
 
-//Checkbox field
-if(!function_exists('ctcb_form_checkbox')){
-	function ctcb_form_checkbox($name, $value, $args = null){
-		$output = '<input type="checkbox" value="1" name="'.$name.'" id="'.$name.'" '.checked($value, '1', false).'/>';
-		return $output;
-	}
-}
-
 //Yes/No radio selection field
 if(!function_exists('ctcb_form_yesno')){
 	function ctcb_form_yesno($name, $value, $args = null){
@@ -61,6 +53,35 @@ if(!function_exists('ctcb_form_select')){
 				}
 			}
 		$output .= '</select>';
+		return $output;
+	}
+}
+
+
+
+//Dropdown list field
+if(!function_exists('ctcb_form_checkbox')){
+	function ctcb_form_checkbox($name, $value, $list, $args = null){
+		$field_class = (isset($args['class']) ? $args['class'] : '');
+		$output = '';
+		if(sizeof($list) > 0)
+			foreach($list as $list_key => $list_value){
+				if(is_array($list_value)){
+					$disabled = '';
+					if(isset($list_value['type']) && $list_value['type'] == 'separator'){
+						$output .= '<h5>'.esc_attr($list_value['name']).'</h5>';
+					}
+				}else{
+					$list_key = esc_attr($list_key);
+					$current_value = isset($value[$list_key]) ? $value[$list_key] : 0;
+					$output .= '<label for="'.$name.'['.$list_key.']">';
+					$output .= '<input type="checkbox" id="'.$name.'['.$list_key.']" name="'.$name.'['.$list_key.']" value="1"'.checked($current_value, 1, false).'>';				
+					$output .= esc_attr($list_value);
+					$output .= '</label>';
+				}
+				
+				
+			}
 		return $output;
 	}
 }

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPO Extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-02 15:42+0100\n"
-"PO-Revision-Date: 2015-03-02 15:44+0100\n"
+"POT-Creation-Date: 2015-07-11 15:47+0200\n"
+"PO-Revision-Date: 2015-07-11 15:52+0200\n"
 "Last-Translator: CPO <mvicedo@cpo.es>\n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -13,178 +13,365 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ./.\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.8.2\n"
 "X-Poedit-SearchPath-0: ../.\n"
 
-#: .././functions/custom.php:12
-msgid "CPO Shortcodes"
-msgstr "CPO Shortcodes"
-
-#: .././functions/custom.php:34
-msgid "Changes have been saved."
-msgstr "Las opciones de configuraci&oacute;n han sido guardadas."
-
-#: .././functions/custom.php:39
-msgid "Changes could not be saved."
-msgstr "Las opciones de configuraci&oacute;n no han podido ser guardadas."
-
-#: .././functions/custom.php:138
-msgid "Save Settings"
-msgstr "Guardar"
-
-#: .././functions/custom.php:210 .././functions/custom.php:232
-#: .././functions/custom.php:269
-#, fuzzy
-msgid "Theme Documentation"
-msgstr "Configuraci&oacute;n"
-
-#: .././functions/custom.php:212 .././functions/custom.php:273
-msgid "More Themes"
-msgstr "Más Temas"
-
-#: .././functions/custom.php:234
-#, fuzzy
-msgid "Support Forum"
-msgstr "Soporte"
-
-#: .././functions/custom.php:249
-#, fuzzy
-msgid "Theme Version"
-msgstr "Opciones del Tema"
-
-#: .././functions/custom.php:271
-#, fuzzy
-msgid "Support Forums"
-msgstr "Soporte"
-
-#: .././functions/custom.php:346
-msgid "default"
-msgstr "por defecto"
-
-#: .././functions/forms.php:43
+#: .././includes/forms.php:35
 msgid "Yes"
-msgstr "S&iacute;"
+msgstr "Sí"
 
-#: .././functions/forms.php:46
+#: .././includes/forms.php:38
 msgid "No"
 msgstr "No"
 
-#: .././functions/forms.php:134
+#: .././includes/forms.php:95
 msgid "Upload"
 msgstr "Subir"
 
-#: .././functions/forms.php:149
-msgid "This is a font preview"
-msgstr "Esta es una previsualización"
+#: .././includes/metadata.php:9
+msgid "Block Location"
+msgstr "Ubicación del Bloque"
 
-#: .././metadata/metadata-general.php:38
+#: .././includes/metadata.php:10
+msgid ""
+"Specify a location for this content block. content blocks can also be "
+"inserted through the [cpo_content_block] shortcode."
+msgstr "Indica una ubicación para este bloque."
+
+#: .././includes/metadata.php:16
+msgid "Block Display"
+msgstr "Visualización"
+
+#: .././includes/metadata.php:17
+msgid "Specify on which pages this block should be visible."
+msgstr ""
+
+#: .././includes/metadata.php:23
+msgid "Block Priority"
+msgstr ""
+
+#: .././includes/metadata.php:24
+msgid ""
+"Specifies the priority in which this block should appear, in case of "
+"multiple blocks using the same location. Lower numbers mean higher priority."
+msgstr ""
+
+#: .././includes/metadata.php:43
+msgid "Padding"
+msgstr "Padding"
+
+#: .././includes/metadata.php:44
+msgid ""
+"You can also use shorthand CSS notation to specify different paddings for "
+"each side."
+msgstr ""
+
+#: .././includes/metadata.php:49
+msgid "Margin"
+msgstr "Márgenes"
+
+#: .././includes/metadata.php:50
+msgid ""
+"You can also use shorthand CSS notation to specify different margins for "
+"each side."
+msgstr ""
+
+#: .././includes/metadata.php:55
+msgid "Background Color"
+msgstr "Color de Fondo"
+
+#: .././includes/metadata.php:56
+msgid ""
+"Indicates the background color for this content block. Leave empty for a "
+"transparent background."
+msgstr ""
+
+#: .././includes/metadata.php:61
+msgid "Color Scheme"
+msgstr "Paleta de colores"
+
+#: .././includes/metadata.php:62
+msgid ""
+"Allows you to change the color of texts inside this block, in case you use a "
+"dark color as the background."
+msgstr ""
+
+#: .././includes/metadata.php:68
+msgid "Custom CSS Styling"
+msgstr "CSS Personalizado"
+
+#: .././includes/metadata.php:69
+msgid "Allows you to customize the CSS styling of this block."
+msgstr ""
+
+#: .././includes/metadata.php:78
 msgid "(None)"
 msgstr "(Ninguno)"
 
-#: .././metadata/metadata-settings.php:9
-msgid "Shortcode Prefix"
-msgstr "Prefijo de Shortcodes"
+#: .././includes/metadata.php:79
+msgid "Standard WordPress Hooks"
+msgstr "Ganchos de WordPress"
 
-#: .././metadata/metadata-settings.php:10
-msgid ""
-"Specifies a prefix for all shortcodes, so that you may avoid possible "
-"conflicts when installing themes or other plugins. If using a prefix, an "
-"underscore (_) will be used as a separator."
-msgstr ""
-"Indica un prefijo para todos los shortcodes, para evitar posibles conflictos "
-"con otros temas o plugins instalados. Si utilizas un prefijo, se utilizará "
-"una barra (_) como separador."
+#: .././includes/metadata.php:81
+msgid "CPOThemes Hooks"
+msgstr "Ganchos de CPOThemes"
 
-#: .././shortcodes/shortcode-column.php:235
-msgid "Background Image"
-msgstr "Imagen de Fondo"
+#: .././includes/metadata.php:82
+msgid "Before website wrapper"
+msgstr "Antes del sitio"
 
-#: .././shortcodes/shortcode-column.php:242
+#: .././includes/metadata.php:83
+msgid "Top bar"
+msgstr "Barra superior"
+
+#: .././includes/metadata.php:84
+msgid "In The Header"
+msgstr "Cabecera"
+
+#: .././includes/metadata.php:85
+msgid "Before main content"
+msgstr "Antes del contenido principal"
+
+#: .././includes/metadata.php:86
+msgid "Before post content"
+msgstr "Antes del contenido del post"
+
+#: .././includes/metadata.php:87
+msgid "After post content"
+msgstr "Desupés del contenido del post"
+
+#: .././includes/metadata.php:88
+msgid "After main content"
+msgstr "Después del contenido principal"
+
+#: .././includes/metadata.php:89
+msgid "In the subfooter"
+msgstr "En el subpié"
+
+#: .././includes/metadata.php:90
+msgid "Before footer area"
+msgstr "Antes del pié"
+
+#: .././includes/metadata.php:91
+msgid "In the footer"
+msgstr "Pié de página"
+
+#: .././includes/metadata.php:92
+msgid "After footer area"
+msgstr "Después del pie"
+
+#: .././includes/metadata.php:93
+msgid "After website wrapper"
+msgstr "Después del sitio"
+
+#: .././includes/metadata.php:94
+msgid "On 404 pages"
+msgstr "En páginas 404"
+
+#: .././includes/metadata.php:105
+msgid "Show Always"
+msgstr "Mostrar Siempre"
+
+#: .././includes/metadata.php:106
+msgid "Front Page"
+msgstr "Página de Inicio"
+
+#: .././includes/metadata.php:107
+msgid "Posts"
+msgstr "Entradas"
+
+#: .././includes/metadata.php:108
+msgid "Pages"
+msgstr "Páginas"
+
+#: .././includes/metadata.php:109
+msgid "404 Pages"
+msgstr "Páginas 404"
+
+#: .././includes/metadata.php:110
+msgid "Search Pages"
+msgstr "Página de búsqueda"
+
+#: .././includes/metadata.php:127
+msgid "Light Scheme"
+msgstr "Colores claros"
+
+#: .././includes/metadata.php:128
+msgid "Dark Scheme"
+msgstr "Colores oscuros"
+
+#: .././includes/post-types.php:9
+msgid "Content Blocks"
+msgstr "Bloques de Contenido"
+
+#: .././includes/post-types.php:10
+msgid "Content Block"
+msgstr "Bloque"
+
+#: .././includes/post-types.php:11
+msgid "Add Content Block"
+msgstr "Añadir Bloque de Contenido"
+
+#: .././includes/post-types.php:12
+msgid "Add New Content Block"
+msgstr "Añadir Nuevo Bloque de Contenido"
+
+#: .././includes/post-types.php:13
+msgid "Edit Content Block"
+msgstr "Editar Bloque de Contenido"
+
+#: .././includes/post-types.php:14
+msgid "New Content Block"
+msgstr "Nuevo Bloque de Contenido"
+
+#: .././includes/post-types.php:15
+msgid "View Content Blocks"
+msgstr "Ver Bloque de Contenido"
+
+#: .././includes/post-types.php:16
+msgid "Search Content Blocks"
+msgstr "Buscar Bloques de Contenido"
+
+#: .././includes/post-types.php:17
+msgid "No content blocks found."
+msgstr "No se han encontrado bloques de contenido."
+
+#: .././includes/post-types.php:18
+msgid "No content blocks found in the trash."
+msgstr "No se han encontrado bloques de contenido en la papelera."
+
+#: .././includes/post-types.php:41
+msgid "Title"
+msgstr "Título"
+
+#: .././includes/post-types.php:42
+msgid "Content"
+msgstr "Contenido"
+
+#: .././includes/post-types.php:43
+msgid "Location"
+msgstr "Ubicación"
+
+#: .././includes/post-types.php:44
+msgid "Filters"
+msgstr "Filtros"
+
+#: .././includes/post-types.php:72
+msgid "Block Settings"
+msgstr "Ubicación del Bloque"
+
+#: .././includes/post-types.php:73
+msgid "Block Appearance"
+msgstr "Apariencia del Bloque"
+
+#~ msgid "CPO Shortcodes"
+#~ msgstr "CPO Shortcodes"
+
+#~ msgid "Changes have been saved."
+#~ msgstr "Las opciones de configuraci&oacute;n han sido guardadas."
+
+#~ msgid "Changes could not be saved."
+#~ msgstr "Las opciones de configuraci&oacute;n no han podido ser guardadas."
+
+#~ msgid "Save Settings"
+#~ msgstr "Guardar"
+
 #, fuzzy
-msgid "Background Color"
-msgstr "Color de Fondo en Páginas"
+#~ msgid "Theme Documentation"
+#~ msgstr "Configuraci&oacute;n"
 
-#: .././shortcodes/shortcode-column.php:249
+#~ msgid "More Themes"
+#~ msgstr "Más Temas"
+
 #, fuzzy
-msgid "Background Style"
-msgstr "Textura de Fondo"
+#~ msgid "Support Forum"
+#~ msgstr "Soporte"
 
-#: .././shortcodes/shortcode-column.php:256
 #, fuzzy
-msgid "Text Color"
-msgstr "Color de Cabeceras"
+#~ msgid "Theme Version"
+#~ msgstr "Opciones del Tema"
 
-#: .././shortcodes/shortcode-column.php:264
 #, fuzzy
-msgid "Border Width"
-msgstr "Por Campo de Orden"
+#~ msgid "Support Forums"
+#~ msgstr "Soporte"
 
-#: .././shortcodes/shortcode-column.php:266
-#: .././shortcodes/shortcode-column.php:274
-msgid "Border"
-msgstr "Borde"
+#~ msgid "default"
+#~ msgstr "por defecto"
 
-#: .././shortcodes/shortcode-column.php:272
+#~ msgid "This is a font preview"
+#~ msgstr "Esta es una previsualización"
+
+#~ msgid "Shortcode Prefix"
+#~ msgstr "Prefijo de Shortcodes"
+
+#~ msgid ""
+#~ "Specifies a prefix for all shortcodes, so that you may avoid possible "
+#~ "conflicts when installing themes or other plugins. If using a prefix, an "
+#~ "underscore (_) will be used as a separator."
+#~ msgstr ""
+#~ "Indica un prefijo para todos los shortcodes, para evitar posibles "
+#~ "conflictos con otros temas o plugins instalados. Si utilizas un prefijo, "
+#~ "se utilizará una barra (_) como separador."
+
+#~ msgid "Background Image"
+#~ msgstr "Imagen de Fondo"
+
 #, fuzzy
-msgid "Border Color"
-msgstr "Color de Cabeceras"
+#~ msgid "Background Style"
+#~ msgstr "Textura de Fondo"
 
-#: .././shortcodes/shortcode-column.php:281
 #, fuzzy
-msgid "Top Padding"
-msgstr "Superior derecha"
+#~ msgid "Text Color"
+#~ msgstr "Color de Cabeceras"
 
-#: .././shortcodes/shortcode-column.php:283
-#: .././shortcodes/shortcode-column.php:291
-#: .././shortcodes/shortcode-column.php:299
-#: .././shortcodes/shortcode-column.php:307
-msgid "Layout"
-msgstr "Estructura"
-
-#: .././shortcodes/shortcode-column.php:289
 #, fuzzy
-msgid "Right Padding"
-msgstr "Branding del Sitio"
+#~ msgid "Border Width"
+#~ msgstr "Por Campo de Orden"
 
-#: .././shortcodes/shortcode-column.php:297
+#~ msgid "Border"
+#~ msgstr "Borde"
+
 #, fuzzy
-msgid "Bottom Padding"
-msgstr "Inferior derecha"
+#~ msgid "Border Color"
+#~ msgstr "Color de Cabeceras"
 
-#: .././shortcodes/shortcode-column.php:305
 #, fuzzy
-msgid "Left Padding"
-msgstr "Cabeceras"
+#~ msgid "Top Padding"
+#~ msgstr "Superior derecha"
 
-#: .././shortcodes/shortcode-column.php:314
-msgid "Element ID"
-msgstr "ID del Elemento"
+#~ msgid "Layout"
+#~ msgstr "Estructura"
 
-#: .././shortcodes/shortcode-column.php:316
-#: .././shortcodes/shortcode-column.php:324
-msgid "Other"
-msgstr "Otro"
-
-#: .././shortcodes/shortcode-column.php:322
-msgid "CSS Classes"
-msgstr "Clases CSS"
-
-#: .././shortcodes/shortcode-posts.php:93
 #, fuzzy
-msgid "By"
-msgstr "Cuerpo"
+#~ msgid "Right Padding"
+#~ msgstr "Branding del Sitio"
+
+#, fuzzy
+#~ msgid "Bottom Padding"
+#~ msgstr "Inferior derecha"
+
+#, fuzzy
+#~ msgid "Left Padding"
+#~ msgstr "Cabeceras"
+
+#~ msgid "Element ID"
+#~ msgstr "ID del Elemento"
+
+#~ msgid "Other"
+#~ msgstr "Otro"
+
+#~ msgid "CSS Classes"
+#~ msgstr "Clases CSS"
+
+#, fuzzy
+#~ msgid "By"
+#~ msgstr "Cuerpo"
 
 #~ msgid "Accordion"
 #~ msgstr "Acordeón"
 
 #~ msgid "An animated accordion with icons"
 #~ msgstr "Un acordeón animado con iconos"
-
-#~ msgid "Content"
-#~ msgstr "Contenidos"
-
-#~ msgid "Title"
-#~ msgstr "T&iacute;tulo"
 
 #~ msgid "Accordion Title"
 #~ msgstr "Título Del Acordeón"
