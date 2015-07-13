@@ -79,7 +79,7 @@ function ctcb_load_blocks(){
 					//Add block to action using anonymous function
 					$block_data = array(
 					'id' => $post->ID,
-					'content' => apply_filters('the_content', $post->post_content),
+					'content' => ctcb_content_filters($post->post_content),
 					'background' => get_post_meta($post->ID, 'block_bg', true),
 					'color' => get_post_meta($post->ID, 'block_color', true),
 					'padding' => get_post_meta($post->ID, 'block_padding', true),
@@ -95,7 +95,13 @@ function ctcb_load_blocks(){
 }
 
 
-//Determine whether to show the block on current page
+//Add filters to the content
+function ctcb_content_filters($content){
+	return do_shortcode($content);
+}
+
+
+//Determine whether to show the block on current page	
 function ctcb_block_page_filter($pages){
 	//If show always, return
 	if(!is_array($pages)) return false;

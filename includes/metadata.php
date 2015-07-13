@@ -21,7 +21,7 @@ function ctcb_metadata_block_settings(){
 	$metadata['block_priority'] = array(
 	'name' => 'block_priority',
 	'label' => __('Block Priority', 'ctcb'),
-	'desc' => __('Specifies the priority in which this block should appear, in case of multiple blocks using the same location. Blocks with a lower number will appear first.', 'ctcb'),
+	'desc' => __('Determines the priority in case of multiple blocks using the same location. Blocks with a lower number will appear first.', 'ctcb'),
 	'type' => 'text');
 	
 	return apply_filters('ctcb_metadata_block_settings', $metadata);
@@ -36,12 +36,14 @@ function ctcb_metadata_block_appearance(){
 	'name' => 'block_padding',
 	'label' => __('Padding', 'ctcb'),
 	'desc' => __('You can also use shorthand CSS notation to specify different paddings for each side.', 'ctcb'),
+	'placeholder' => '10px',
 	'type' => 'text');
 
 	$metadata['block_margin'] = array(
 	'name' => 'block_margin',
 	'label' => __('Margin', 'ctcb'),
 	'desc' => __('You can also use shorthand CSS notation to specify different margins for each side.', 'ctcb'),
+	'placeholder' => '0px',
 	'type' => 'text');
 
 	$metadata['block_bg'] = array(

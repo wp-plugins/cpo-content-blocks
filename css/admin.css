@@ -22,4 +22,5 @@
 
 /* Columns in posts table */
 .column-ctcb-location,
-.column-ctcb-filters { width:150px; }
+.column-ctcb-filters,
+.column-ctcb-pages { width:150px; }

@@ -41,7 +41,7 @@ function ctcb_post_columns($columns){
 	'title' => __('Title', 'ctcb'),
 	'ctcb-excerpt' => __('Content', 'ctcb'),
 	'ctcb-location' => __('Location', 'ctcb'),
-	'ctcb-filters' => __('Filters', 'ctcb'),
+	'ctcb-pages' => __('Pages', 'ctcb'),
 	);
 	return $columns;
 }
@@ -56,10 +56,15 @@ function ctcb_post_columns_content($column){
 			echo ctcb_metadata_locations(get_post_meta($post->ID, 'block_location', true));
 		break;	
 		case 'ctcb-excerpt': 
-			echo substr(strip_tags($post->post_content), 0, 180).'&hellip;';
+			$content = strip_tags($post->post_content);
+			echo substr($content, 0, 180);
+			if(strlen($content) > 180) echo '&hellip;';
 		break;	
-		case 'ctcb-filters': 
-			echo ctcb_metadata_filters(get_post_meta($post->ID, 'block_filter', true));
+		case 'ctcb-pages': 
+			$pages = get_post_meta($post->ID, 'block_pages', true);
+			if(is_array($pages)) foreach($pages as $current_page => $current_value){
+				echo ctcb_metadata_pages($current_page).'<br>';
+			}
 		break;	
 		default:break;
 	}
