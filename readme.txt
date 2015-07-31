@@ -70,5 +70,10 @@ To insert a block directly onto your template files, use the following snippet. 
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixes - Added plugin icon
+* Fixes - Added hooks to each content block
+* Fixes - Added better interface to admin
+
 = 1.0.0 =
 * Plugin release, yay!

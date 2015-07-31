@@ -3,7 +3,7 @@
 Plugin Name: CPO Content blocks
 Description: Allows you to create reusable pieces of content that you can place anywhere in your site. Insert them into your posts, on a sidebar, or place them directly onto the layout thanks to the different areas available.
 Author: CPOThemes
-Version: 1.0.0
+Version: 1.0.1
 Author URI: http://www.cpothemes.com
 */
 

@@ -88,7 +88,9 @@ function ctcb_metabox_settings($post){
 
 //Display metaboxes
 function ctcb_metabox_appearance($post){ 
+	do_action('ctcb_metabox_before_appearance');
 	ctcb_meta_fields($post, ctcb_metadata_block_appearance());
+	do_action('ctcb_metabox_after_appearance');
 }
 
 
